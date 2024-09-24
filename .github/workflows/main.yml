@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
-        RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      EMAIL_SENDER: ${{ secrets.SENDER_EMAIL }}
+      EMAIL_RECEIVER: ${{ secrets.RECEIVER_EMAIL }}
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       HTTP_PROXY: http://62.72.56.132:80
       HTTPS_PROXY: http://62.72.56.132:80
       NODE_VERSION: 20  # تنظیم نسخه‌ی Node.js به 20
