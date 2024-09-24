@@ -12,7 +12,7 @@ from email import encoders
 from io import BytesIO
 
 # صرافی بایننس
-exchange = ccxt.binance()
+exchange = ccxt.kucoin()
 
 # ترتیب تایم‌فریم‌ها
 timeframes = ['15m', '30m', '1h', '2h', '4h', '1d']
