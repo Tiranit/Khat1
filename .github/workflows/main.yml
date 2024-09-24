@@ -1,0 +1,38 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # انتخاب نسخه پایتون که می‌خواهید استفاده کنید
+
+    - name: Set proxy
+      run: |
+        git config --global http.proxy 178.48.68.61:18080
+        git config --global https.proxy 178.48.68.61:18080
+      env:
+        http_proxy: 178.48.68.61:18080
+        https_proxy: 178.48.68.61:18080
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install ccxt  # نصب کتابخانه ccxt
+        # اگر requirements.txt وجود ندارد، خط زیر را حذف کنید
+        # pip install -r requirements.txt  
+
+    - name: Run the Python script
+      run: |
+        python main.py  # اجرای اسکریپت اصلی
