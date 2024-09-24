@@ -189,3 +189,8 @@ if all_attachments:
     send_email("Downward Trendline Breaks Detected", email_body, all_attachments)
 else:
     print("No valid trendline breaks found.")
+
+
+من میخوام این در GitHub هر یک ساعت یکبار بطور خودکار اجرا بشه 
+اسم کد من هم main.py هست.
+کد work flow این رو بر این اساس تنظیم کن
