@@ -20,11 +20,11 @@ jobs:
 
     - name: Set proxy
       run: |
-        git config --global http.proxy 178.48.68.61:18080
-        git config --global https.proxy 178.48.68.61:18080
+        git config --global http.proxy 86.101.159.145:18080
+        git config --global https.proxy 86.101.159.145:18080
       env:
-        http_proxy: 178.48.68.61:18080
-        https_proxy: 178.48.68.61:18080
+        http_proxy: 86.101.159.145:18080
+        https_proxy: 86.101.159.145:18080
 
     - name: Install dependencies
       run: |
