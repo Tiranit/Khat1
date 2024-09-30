@@ -20,11 +20,11 @@ jobs:
 
     - name: Set proxy
       run: |
-        git config --global http.proxy 81.181.172.106:50100
-        git config --global https.proxy 81.181.172.106:50100
+        git config --global http.proxy 151.248.71.140:50100
+        git config --global https.proxy 151.248.71.140:50100
       env:
-        http_proxy: 81.181.172.106:50100
-        https_proxy: 81.181.172.106:50100
+        http_proxy: 151.248.71.140:50100
+        https_proxy: 151.248.71.140:50100
 
     - name: Test proxy connectivity
       run: |
