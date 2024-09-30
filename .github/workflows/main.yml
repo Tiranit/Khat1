@@ -1,0 +1,40 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # انتخاب نسخه پایتون که می‌خواهید استفاده کنید
+
+    - name: Set proxy
+      run: |
+        git config --global http.proxy 81.181.172.106:50100
+        git config --global https.proxy 81.181.172.106:50100
+      env:
+        http_proxy: 81.181.172.106:50100
+        https_proxy: 81.181.172.106:50100
+
+    - name: Test proxy connectivity
+      run: |
+        curl -I https://github.com || echo "Proxy might not be working."
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install ccxt numpy pandas mplfinance
+
+    - name: Run the Python script
+      run: |
+        python main.py  # اجرای اسکریپت اصلی
